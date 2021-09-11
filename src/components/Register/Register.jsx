@@ -1,8 +1,20 @@
 import React from 'react'
+import { Switch, Route, useParams, useRouteMatch } from "react-router-dom";
+import Login from './Login';
+ 
 
- const Register = () => {
+const Register = () => {
+    const { path } = useRouteMatch();
+
     return (
         <div className="register main">
+            {/* -------------------------------------------------- */}
+            <Switch>
+                <Route path={`${path}/Login`}>
+                    <Login/>
+                </Route>
+            </Switch>
+            {/* -------------------------------------------------- */}
             <h3>Register</h3>
             <form action="submit">
                     <input type="text" />
